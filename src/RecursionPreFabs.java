@@ -28,9 +28,12 @@ public class RecursionPreFabs extends Generator {
 		{
 			Scanner lookThrough = new Scanner(F);
 			String writer = "";
-			while (lookThrough.hasNext()) {
+			String startKey = randomPrefabKey();
+			String stopkey = startKey + "*";
+			while (lookThrough.next() != stopkey) {
 				String temp = lookThrough.nextLine();
-				if (temp.contains("#")) {
+				if (temp.contains("#"))
+				{
 					String temp2 = "";
 					for (int i = 0; i < temp.length(); i++) {
 						if (temp.charAt(i) != '#') {
@@ -43,12 +46,36 @@ public class RecursionPreFabs extends Generator {
 					}
 					temp = temp2;
 				}
+
 				writer += temp + "\n";
 
 			}
 
 			return writer;
 		}
+			/*while (lookThrough.hasNext()) {
+				String temp = lookThrough.nextLine();
+				if (temp.contains("#"))
+				{
+					String temp2 = "";
+					for (int i = 0; i < temp.length(); i++) {
+						if (temp.charAt(i) != '#') {
+							temp2 += temp.charAt(i);
+						} else {
+							temp2 += parsePeice(temp.charAt(i + 1));
+							i = i + 2;
+						}
+
+					}
+					temp = temp2;
+				}
+
+				writer += temp + "\n";
+
+			}
+
+			return writer;
+		}*/
 		catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -65,5 +92,10 @@ public class RecursionPreFabs extends Generator {
 			return methodName;
 		}
 		return "ERROR";
+	}
+	public static String randomPrefabKey()
+	{
+		String[] fabKeys = {"*1","*2"};
+		return fabKeys[(int)(Math.random() * 1)];
 	}
 }

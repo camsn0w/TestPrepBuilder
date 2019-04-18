@@ -75,9 +75,11 @@ public class Generator
 			{
 				Scanner lookThrough = new Scanner(F);
 				BufferedWriter writer = new BufferedWriter(new FileWriter("newestOutput.txt"));
+				boolean insert = false;
 				while (lookThrough.hasNext())
 				{
 					String temp = lookThrough.nextLine();
+					System.out.println("Temp: " + temp);
 					if(temp.contains("#"))
 					{
 						String temp2 = "";
@@ -95,8 +97,17 @@ public class Generator
 
 						}
 						temp = temp2;
+
+
 					}
+
 					writer.write(temp + "\n");
+					if(temp.contains("{") && !temp.contains("class"))
+					{
+						writer.write(RecursionPreFabs.getPrefab());
+
+					}
+
 
 				}
 				writer.close();

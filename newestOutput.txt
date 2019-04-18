@@ -4,16 +4,15 @@
  * 4/9/19
  */
 
-public class RecursionTemplate
-{
-	public static void main(String[]args)
+public class RecursionTemplate {
+
+	public static int bleeper(int bleeper)
 	{
-
-
-	}
-
-	public static String munger(String bleeper)
-	{
+		if(bleeper > 0)
+		{
+			System.out.println(bleeper);
+			bleeper(bleeper - 1);
+		}
 
 	}
 
