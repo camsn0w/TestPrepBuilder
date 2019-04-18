@@ -1,0 +1,40 @@
+
+/* RecursionIntPreFabTemplate.java
+ * Cameron Connell 
+ * 4/17/19
+ */
+
+public class RecursionIntPreFabTemplate
+{
+	public static void main(String []args)
+	{
+		if(#v# > 0)
+		{
+			System.out.println(#v#);
+			#n#(#v# - 1);
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	}
+}
