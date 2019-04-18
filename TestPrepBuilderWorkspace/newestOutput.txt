@@ -12,7 +12,7 @@ public class RecursionTemplate
 
 	}
 
-	public static #t# #n#(#t# #n#)
+	public static String munger(String munger)
 	{
 
 	}
