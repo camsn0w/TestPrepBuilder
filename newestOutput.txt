@@ -12,7 +12,7 @@ public class RecursionTemplate
 
 	}
 
-	public static String munger(String munger)
+	public static String munger(int bleeper)
 	{
 
 	}

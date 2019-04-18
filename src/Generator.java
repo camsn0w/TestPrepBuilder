@@ -12,6 +12,9 @@ public class Generator
 		//public String fileName = "/RecursionPlate.txt";
 		//public String fileName = "/home/camsn0w/Documents/Java-PrepGenerator/src/RecursionPlate.txt";
 		public static String fileName = "RecursionPlate.txt";
+		public static String currentMethodType = "null";
+		public static String currentInputType = "null";
+
 
 		public static void main(String []args)
 		{
@@ -106,7 +109,18 @@ public class Generator
 			switch (s)
 			{
 				case 'n': return randomNames();
-				case 't': return randomTypes();
+				case 't':
+					String temp = randomTypes();
+					if(currentMethodType == null)
+					{
+						currentMethodType = temp;
+						return temp;
+					}
+					else if(currentInputType == null)
+					{
+						
+					}
+
 
 			}
 			return "ERROR";
