@@ -6,12 +6,12 @@
 
 public class RecursionTemplate {
 
-	public static int bleeper(int bleeper)
+	public static String effect(int altar)
 	{
-		if(bleeper > 0)
-		{
-			System.out.println(bleeper);
-			bleeper(bleeper - 1);
+        if(altar > 0)
+        {
+			System.out.println(altar);
+			effect(altar - 1);
 		}
 
 	}

@@ -30,24 +30,42 @@ public class RecursionPreFabs extends Generator {
 			String writer = "";
 			String startKey = randomPrefabKey();
 			String stopkey = startKey + "*";
-			while (lookThrough.next() != stopkey) {
-				String temp = lookThrough.nextLine();
-				if (temp.contains("#"))
+			System.out.println("Startkey: " + startKey);
+			String temp = "";
+			boolean startCopy = false;
+			while (!temp.contains(stopkey))
+			{
+				temp = lookThrough.nextLine();
+				System.out.println("Temp: " + temp);
+				if(temp.contains(startKey))
 				{
-					String temp2 = "";
-					for (int i = 0; i < temp.length(); i++) {
-						if (temp.charAt(i) != '#') {
-							temp2 += temp.charAt(i);
-						} else {
-							temp2 += parsePeice(temp.charAt(i + 1));
-							i = i + 2;
-						}
-
-					}
-					temp = temp2;
+					startCopy = true;
+					continue;
 				}
+				if(startCopy)
+				{
+					System.out.println("HERE");
+					if (temp.contains("#"))
+					{
+						String temp2 = "";
+						for (int i = 0; i < temp.length(); i++) {
+							if(temp.contains(stopkey))
+							{
+								break;
+							}
+							if (temp.charAt(i) != '#')
+							{
+								temp2 += temp.charAt(i);
+							} else {
+								temp2 += parsePeice(temp.charAt(i + 1));
+								i = i + 2;
+							}
 
-				writer += temp + "\n";
+						}
+						temp = temp2;
+					}
+					writer += temp + "\n";
+				}
 
 			}
 
@@ -96,6 +114,6 @@ public class RecursionPreFabs extends Generator {
 	public static String randomPrefabKey()
 	{
 		String[] fabKeys = {"*1","*2"};
-		return fabKeys[(int)(Math.random() * 1)];
+		return fabKeys[(int)(Math.random() * 2)];
 	}
 }

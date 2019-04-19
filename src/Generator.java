@@ -79,7 +79,7 @@ public class Generator
 				while (lookThrough.hasNext())
 				{
 					String temp = lookThrough.nextLine();
-					System.out.println("Temp: " + temp);
+
 					if(temp.contains("#"))
 					{
 						String temp2 = "";
@@ -153,9 +153,61 @@ public class Generator
 		}
 		private static String randomNames()
 		{
-			String[] names = {"bleeper","munger","thingy"};
+			if(methodName == null)
+			{
+				return randomMethodName();
+			}
+			return randomVarName();
 
-			return names[(int)(Math.random() * 2)];
+			/*String[] names = {"bleeper","munger","thingy"};
+
+			return names[(int)(Math.random() * 2)];*/
+		}
+		private static String randomMethodName()
+		{
+			try
+			{
+				Scanner input = new Scanner(new File("VerbList.txt"));
+				int wordNum = (int)(Math.random() * 1000) + 1;
+				String word = "";
+				for (int i = 0; i <=wordNum ; i++)
+				{
+					String temp = input.nextLine();
+					if(i == wordNum)
+					{
+						word = temp;
+					}
+				}
+				return word;
+			}
+			catch (FileNotFoundException e)
+			{
+				System.out.println("VerbList not found");
+			}
+			return null;
+		}
+		private static String randomVarName()
+		{
+			try
+			{
+				Scanner input = new Scanner(new File("NounList.txt"));
+				int wordNum = (int)(Math.random() * 1000) + 1;
+				String word = "";
+				for (int i = 0; i <=wordNum ; i++)
+				{
+					String temp = input.nextLine();
+					if(i == wordNum)
+					{
+						word = temp;
+					}
+				}
+				return word;
+			}
+			catch (FileNotFoundException e)
+			{
+				System.out.println("NounList not found");
+			}
+			return null;
 		}
 		private static String randomTypes()
 		{
