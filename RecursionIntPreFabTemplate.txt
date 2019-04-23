@@ -1,17 +1,27 @@
-*1
-        if(#v# > 0)
-        {
+
+/* RecursionIntPreFabTemplate.java
+ * Cameron Connell 
+ * 4/17/19
+ */
+
+public class RecursionIntPreFabTemplate
+{
+	public static void main(String []args)
+	{
+		*1*
+		if(#v# #># #0#)
+		{
 			System.out.println(#v#);
-			#n#(#v# - 1);
+			#n#(#v# #+# #1#);
 		}
-*1*
-*2
-       while(#v# > 4)
-       {
-        System.out.println(#v#);
-        #n#(#v# - 1);
-       }
-*2*
+		*1*
+		*2*
+        if(#v# #># #0#)
+        {
+        	System.out.println(#v#);
+        	#n#(#v# #+# #1#);
+        }
+        *2*
 
 
 
@@ -34,4 +44,5 @@
 
 
 
-
+	}
+}

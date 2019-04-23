@@ -6,13 +6,8 @@
 
 public class RecursionTemplate {
 
-	public static String effect(int altar)
+	public static int learn(int alpaca)
 	{
-        if(altar > 0)
-        {
-			System.out.println(altar);
-			effect(altar - 1);
-		}
 
 	}
 

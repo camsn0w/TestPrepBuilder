@@ -8,10 +8,10 @@ public class RecursionIntPreFabTemplate
 {
 	public static void main(String []args)
 	{
-		if(#v# > 0)
+		if(#v# #># #0#)
 		{
 			System.out.println(#v#);
-			#n#(#v# - 1);
+			#n#(#v# #+# #1#);
 		}
 
 

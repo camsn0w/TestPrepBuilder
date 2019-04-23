@@ -1,4 +1,3 @@
-
 /* Generator.java
  * Cameron Connell 
  * 4/9/19
@@ -21,10 +20,10 @@ public class Generator
 		public static void main(String []args)
 		{
 			//Generator g = new Generator();
-			//g.read();
-			File temp = read(fileName);
-			randomizer(temp);
+			read(fileName);
+
 			System.out.println(RecursionPreFabs.getPrefab());
+
 
 
 			/*try {

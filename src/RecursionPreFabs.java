@@ -9,7 +9,9 @@ import java.io.File;
 import java.io.FileWriter;
 import java.util.Scanner;
 
-public class RecursionPreFabs extends Generator {
+public class RecursionPreFabs extends Generator
+{
+	public static double firstValue = 100;
 	public static String getPrefab()
 	{
 		switch (currentMethodType + currentInputType) {
@@ -29,8 +31,9 @@ public class RecursionPreFabs extends Generator {
 			Scanner lookThrough = new Scanner(F);
 			String writer = "";
 			String startKey = randomPrefabKey();
+
 			String stopkey = startKey + "*";
-			System.out.println("Startkey: " + startKey);
+			System.out.println("Startkey: " + startKey + "Stopkey: " + stopkey);
 			String temp = "";
 			boolean startCopy = false;
 			while (!temp.contains(stopkey))
@@ -51,6 +54,7 @@ public class RecursionPreFabs extends Generator {
 						for (int i = 0; i < temp.length(); i++) {
 							if(temp.contains(stopkey))
 							{
+								System.out.println("AY");
 								break;
 							}
 							if (temp.charAt(i) != '#')
@@ -108,6 +112,15 @@ public class RecursionPreFabs extends Generator {
 		if (c == 'n')
 		{
 			return methodName;
+		}
+		if (c == '<' || c == '>')
+		{
+			String[] operands = {"<",">","<=",">="};
+			return operands[(int)(Math.random() * 3)];
+		}
+		if(Character.isDigit(c))
+		{
+			return String.valueOf((int)(Math.random() * 10));
 		}
 		return "ERROR";
 	}
