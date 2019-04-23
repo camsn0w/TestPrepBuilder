@@ -20,8 +20,8 @@ public class Generator
 		public static void main(String []args)
 		{
 			//Generator g = new Generator();
-			read(fileName);
 
+			randomizer(read(fileName));
 			System.out.println(RecursionPreFabs.getPrefab());
 
 
@@ -185,6 +185,8 @@ public class Generator
 			}
 			return null;
 		}
+		//TODO: Change randomVarName() to create method calls to the generated methods
+		//TODO: And add them into the Runner.java file
 		private static String randomVarName()
 		{
 			try

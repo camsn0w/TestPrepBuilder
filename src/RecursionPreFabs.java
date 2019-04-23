@@ -33,7 +33,8 @@ public class RecursionPreFabs extends Generator
 			String startKey = randomPrefabKey();
 
 			String stopkey = startKey + "*";
-			System.out.println("Startkey: " + startKey + "Stopkey: " + stopkey);
+			System.out.println("Startkey: " + startKey + " Stopkey: " + stopkey);
+
 			String temp = "";
 			boolean startCopy = false;
 			while (!temp.contains(stopkey))
@@ -43,6 +44,7 @@ public class RecursionPreFabs extends Generator
 				if(temp.contains(startKey))
 				{
 					startCopy = true;
+					System.out.println("AY");
 					continue;
 				}
 				if(startCopy)
@@ -60,7 +62,8 @@ public class RecursionPreFabs extends Generator
 							if (temp.charAt(i) != '#')
 							{
 								temp2 += temp.charAt(i);
-							} else {
+							} else
+								{
 								temp2 += parsePeice(temp.charAt(i + 1));
 								i = i + 2;
 							}
@@ -115,12 +118,17 @@ public class RecursionPreFabs extends Generator
 		}
 		if (c == '<' || c == '>')
 		{
-			String[] operands = {"<",">","<=",">="};
-			return operands[(int)(Math.random() * 3)];
+			String[] inequals = {"<",">","<=",">="};
+			return inequals[(int)(Math.random() * 3)];
 		}
 		if(Character.isDigit(c))
 		{
 			return String.valueOf((int)(Math.random() * 10));
+		}
+		if(c == '+' || c == '-')
+		{
+			String[] operands = {"-","*","/","%"};
+			return operands[(int)(Math.random() * 3)];
 		}
 		return "ERROR";
 	}
